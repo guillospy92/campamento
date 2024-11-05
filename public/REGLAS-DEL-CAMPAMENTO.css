@@ -1,0 +1,112 @@
+.u-section-1 .u-sheet-1 {
+  min-height: 622px;
+}
+
+.u-section-1 .u-image-1 {
+  --radius: 10px;
+  height: 564px;
+  width: 967px;
+  box-shadow: 0px 0px 8px 0px rgba(128,128,128,1);
+  margin: 38px -32px 0;
+}
+
+.u-section-1 .u-btn-1 {
+  --radius: 4px;
+  border-style: solid;
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  letter-spacing: 1px;
+  box-shadow: 0px 2px 6px 0 rgba(0,0,0,0.25);
+  transition-duration: 0.5s;
+  transform: rotate(0deg) scale(1) translateX(0px) translateY(0px);
+  background-image: none;
+  margin: -82px 101px 60px auto;
+  padding: 3px 3px 4px 2px;
+}
+
+@media (max-width: 1199px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 535px;
+  }
+
+  .u-section-1 .u-image-1 {
+    height: 481px;
+    width: 831px;
+    margin-top: 30px;
+    margin-left: -31px;
+    margin-right: -31px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: -75px;
+    margin-right: 66px;
+  }
+}
+
+@media (max-width: 991px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 527px;
+  }
+
+  .u-section-1 .u-image-1 {
+    height: 467px;
+    width: 818px;
+    margin-left: -25px;
+    margin-right: -25px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: -74px;
+    margin-right: 77px;
+  }
+}
+
+@media (max-width: 767px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 514px;
+  }
+
+  .u-section-1 .u-image-1 {
+    height: 446px;
+    width: 817px;
+    margin-top: 34px;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: -64px;
+    margin-right: 85px;
+  }
+}
+
+@media (max-width: 575px) {
+  .u-section-1 .u-sheet-1 {
+    min-height: 123px;
+  }
+
+  .u-section-1 .u-image-1 {
+    height: 55px;
+    width: 100px;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .u-section-1 .u-btn-1 {
+    margin-top: 327px;
+    margin-right: 0;
+  }
+}
+
+.u-section-1 .u-btn-1,
+.u-section-1 .u-btn-1:before,
+.u-section-1 .u-btn-1 > .u-container-layout:before {
+  transition-property: fill, color, background-color, stroke-width, border-style, border-width, border-top-width, border-left-width, border-right-width, border-bottom-width, custom-border, borders, box-shadow, text-shadow, opacity, border-radius, stroke, border-color, font-size, font-style, font-weight, text-decoration, letter-spacing, transform, background-image, image-zoom, background-size, background-position;
+}
+
+.u-section-1 .u-btn-1.u-btn-1.u-btn-1:hover {
+  transform: scale(1.1) !important;
+}
+
+.u-section-1 .u-btn-1.u-btn-1.u-btn-1.hover {
+  transform: scale(1.1) !important;
+}
