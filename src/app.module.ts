@@ -10,7 +10,7 @@ import { Team } from './entities/Team';
     TypeOrmModule.forRoot({
       type: 'mysql',
       host: 'autorack.proxy.rlwy.net',
-      port: 3306,
+      port: 12322,
       username: 'root',
       password: 'iHOJUULvyXgTIvUmwEbBqcyKgRGSuUuP',
       database: 'railway',
