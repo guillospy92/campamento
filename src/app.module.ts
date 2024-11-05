@@ -9,11 +9,12 @@ import { Team } from './entities/Team';
   imports: [
     TypeOrmModule.forRoot({
       type: 'mysql',
-      host: '127.0.0.1',
+      //host: '127.0.0.1',
+      host: 'mysql.railway.internal',
       port: 3306,
       username: 'root',
-      password: 'root',
-      database: 'campamento',
+      password: 'iHOJUULvyXgTIvUmwEbBqcyKgRGSuUuP',
+      database: 'railway',
       entities: [Animals, Team],
       synchronize: true,
     }),
