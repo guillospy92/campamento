@@ -21,7 +21,6 @@
 
   <style>
     .custom-bg {
-      background-image: url('images/PANTALLA3.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -47,7 +46,7 @@
   <meta data-intl-tel-input-cdn-path="intlTelInput/">
 </head>
 
-<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="es">
+<body>
 <header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-header" id="sec-17d8"><a href="#"
                                                                                                   class="u-image u-logo u-image-1"
                                                                                                   data-image-width="2457"
@@ -127,14 +126,14 @@
     </div>
     <div class="u-custom-menu u-nav-container">
       <ul class="u-nav u-spacing-30 u-unstyled u-nav-1">
-        <li class="u-nav-item"><a
+        <li class="u-nav-item"><a href="/"
           class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
           style="padding: 9px 8px;">INICIO</a>
         </li>
         <li class="u-nav-item"><a
           class="u-border-2 u-border-active-palette-1-base u-border-hover-palette-1-base u-border-no-left u-border-no-right u-border-no-top u-button-style u-nav-link u-text-active-palette-1-base u-text-grey-90 u-text-hover-grey-90"
-          href="REGLAS-CAMPAMENTO.html" target="_blank" style="padding: 9px 8px;">REGLAS
-          CAMPAMENTO</a>
+          href="/rules" target="_blank" style="padding: 9px 8px;">REGLAS
+          DESAFIO</a>
         </li>
       </ul>
     </div>
@@ -144,11 +143,11 @@
         <div class="u-inner-container-layout u-sidenav-overflow">
           <div class="u-menu-close"></div>
           <ul class="u-align-center u-nav u-popupmenu-items u-unstyled u-nav-2">
-            <li class="u-nav-item"><a class="u-button-style u-nav-link">INICIO</a>
+            <li class="u-nav-item"><a href="/" class="u-button-style u-nav-link">INICIO</a>
             </li>
             <li class="u-nav-item"><a class="u-button-style u-nav-link"
-                                      href="REGLAS-CAMPAMENTO.html" target="_blank">REGLAS
-              CAMPAMENTO</a>
+                                      href="/rules" target="_blank">REGLAS
+              DESAFIO</a>
             </li>
           </ul>
         </div>
@@ -157,78 +156,75 @@
     </div>
   </nav>
 </header>
-<div class="container-fluid custom-bg ">
+<div>
+  <form action="/teams-form-save" method="POST">
     <input type="hidden" name="animal_name" value="{{ teamName }}" id="">
     <input type="hidden" name="animal_img" value="{{ imgName }}" id="">
-    <div class="row">
-      <div class="col-12 col-md-2"></div>
-      <div class="col-12 col-md-3"></div>
-      <div class="col-12 col-md-4" style="margin-top: 8%; margin-left: 6%;">
-        <h5 style="color: white;  font-style: italic; font-family: initial;"> {{ teamName }}</h5>
-        <img src="images/{{ imgName }}.png" width="100px" height="100px" alt="">
-      </div>
-    </div>
+    <div class="container" style="margin-bottom: 400px">
+      <div class="row">
+        <div class="col-12 col-md-12">
+          <form action="/teams-form-save" method="POST">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <thead style="background-color: #f42b36 !important; color: white;">
+                <tr>
+                  <th>Nombre</th>
+                  <th>CC</th>
+                  <th>Telefono</th>
+                  <th>F. Nacimiento</th>
+                  <th>Edad</th>
+                  <th>Rol</th>
+                </tr>
+                </thead>
+                <tbody>
+                {{#each members}}
+                  <tr>
+                    <td >{{ this.name }}</td>
+                    <td >{{ this.cc }}</td>
+                    <td >{{ this.phone }}</td>
+                    <td >{{ this.formattedStartDate }}</td>
+                    <td >{{ this.age }}</td>
+                    <td >{{ this.role }}</td>
 
-    <div class="row">
-      <div class="col-12 col-md-2">
-      </div>
-      <div class="col-12 col-md-8">
-        <div class="table-responsive" style="margin-top: 3%">
-
-          <table class="table table-bordered table-striped">
-            <thead style="background-color: #f42b36 !important; color: white;">
-            <tr>
-              <th>Nombre</th>
-              <th>CC</th>
-              <th>Telefono</th>
-              <th>F. Nacimiento</th>
-              <th>Edad</th>
-              <th>Rol</th>
-            </tr>
-            </thead>
-            <tbody>
-            {{#each members}}
-              <tr>
-                <td style="color: white">{{ this.name }}</td>
-                <td style="color: white">{{ this.cc }}</td>
-                <td style="color: white">{{ this.phone }}</td>
-                <td style="color: white">{{ this.formattedStartDate }}</td>
-                <td style="color: white">{{ this.age }}</td>
-                <td style="color: white">{{ this.role }}</td>
-
-              </tr>
-            {{/each}}
-            </tbody>
-          </table>
+                  </tr>
+                {{/each}}
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-2"></div>
+              <div class="col-12 col-md-3"></div>
+              <div class="col-12 col-md-4">
+                <a href="/rules" style="background-color: #f42b36; color: white" type="submit" class="btn  btn-lg">Terminar</a>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="col-12 col-md-2">1</div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12 col-md-2"></div>
-      <div class="col-12 col-md-4"></div>
-      <div class="col-12 col-md-4">
-        <a href="/rules" style="background-color: #f42b36; color: white" type="submit" class="btn  btn-lg">Terminar</a>
       </div>
     </div>
 
-</div>
 
-
-<footer
-  class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-xl u-footer u-grey-80 u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-footer"
-  id="sec-32b2">
-  <p class="u-align-center-xs u-text u-text-1"> La Fundación Juventud Plena, JP, es una institución sin fines
-    de
-    lucro, creada, registrada y protocolizada jurídicamente, dedicada a brindar atención gratuita a los
-    niños, niñas,
-    adolescentes y jóvenes, destacando nuestra labor humanista, contribuyendo de esta manera a rescatar y
-    consolidar
-    los valores sociales y principios morales en el hogar.</p>
-  <p class="u-small-text u-text u-text-variant u-text-2"> Fundación Juventud Plena<br>¡Ampliando el Potencial
-    Humano!
-  </p>
-</footer>
+    <footer
+      class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-xl u-footer u-grey-80 u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-footer"
+      id="sec-32b2">
+      <p class="u-align-center-xs u-text u-text-1"> La Fundación Juventud Plena, JP, es una institución sin fines
+        de
+        lucro, creada, registrada y protocolizada jurídicamente, dedicada a brindar atención gratuita a los
+        niños, niñas,
+        adolescentes y jóvenes, destacando nuestra labor humanista, contribuyendo de esta manera a rescatar y
+        consolidar
+        los valores sociales y principios morales en el hogar.</p>
+      <p class="u-small-text u-text u-text-variant u-text-2"> Fundación Juventud Plena<br>¡Ampliando el Potencial
+        Humano!
+      </p>
+    </footer>
 </body>
-
+<script>
+  const urlParams = new URLSearchParams(window.location.search);
+  const errorMessage = urlParams.get("error");
+  if (errorMessage !== "" && errorMessage !== null && errorMessage !== undefined) {
+    alert("este grupo ya existe porfavor vuelve a la pantalla anterior y escoge otro grupo");
+    window.location.href = "/team";
+  }
+</script>
 </html>
