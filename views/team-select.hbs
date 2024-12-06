@@ -21,7 +21,6 @@
 
   <style>
     .custom-bg {
-      background-image: url('images/PANTALLA4.png');
       background-size: cover;
       background-position: center;
       background-repeat: no-repeat;
@@ -47,7 +46,7 @@
   <meta data-intl-tel-input-cdn-path="intlTelInput/">
 </head>
 
-<body data-path-to-root="./" data-include-products="false" class="u-body u-xl-mode" data-lang="es">
+<body>
 <header class="u-align-center-sm u-align-center-xs u-clearfix u-header u-header" id="sec-17d8"><a href="#"
                                                                                                   class="u-image u-logo u-image-1"
                                                                                                   data-image-width="2457"
@@ -157,169 +156,163 @@
     </div>
   </nav>
 </header>
-<div class="container-fluid custom-bg ">
+<div>
   <form action="/teams-form-save" method="POST">
     <input type="hidden" name="animal_name" value="{{ teamName }}" id="">
     <input type="hidden" name="animal_img" value="{{ imgName }}" id="">
-    <div class="row">
-      <div class="col-12 col-md-2"></div>
-      <div class="col-12 col-md-3"></div>
-      <div class="col-12 col-md-4" style="margin-top: 8%; margin-left: 6%;">
-        <img src="images/{{ imgName }}.png" width="200px" height="200px" alt="">
-      </div>
-    </div>
+    <div class="container" style="margin-bottom: 400px">
+      <div class="row">
+        <div class="col-12 col-md-12">
+          <form action="/teams-form-save" method="POST">
+            <div class="table-responsive">
+              <table class="table table-bordered table-striped">
+                <thead style="background-color: #f42b36 !important; color: white;">
+                <tr>
+                  <th>Nombre</th>
+                  <th>CC</th>
+                  <th>Telefono</th>
+                  <th>F. Nacimiento</th>
+                  <th>Edad</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                  <td>
+                    <input name="leader_name" required type="text" class="form-control"
+                           placeholder="nombre del lider">
+                  </td>
+                  <td>
+                    <input name="leader_cc" required type="number" class="form-control" placeholder="cc del lider">
+                  </td>
+                  <td>
+                    <input name="leader_phone" required type="number" class="form-control"
+                           placeholder="telefono del lider">
+                  </td>
+                  <td>
+                    <input name="leader_date" required type="date" class="form-control"
+                           placeholder="f. nacimiento del lider"></td>
+                  <td>
+                    <input name="leader_age" required type="number" class="form-control"
+                           placeholder="edad del lider"></td>
+                </tr>
 
-    <div class="row">
-      <div class="col-12 col-md-2">
-      </div>
-      <div class="col-12 col-md-8">
-        <h3 style="color: white; margin-left: 5%; font-style: italic; font-family: initial;">EQUIPO {{ teamName }}</h3>
-        <div class="table-responsive" style="margin-top: 3%">
-
-          <table class="table table-bordered table-striped">
-            <thead style="background-color: #f42b36 !important; color: white;">
-            <tr>
-              <th>Nombre</th>
-              <th>CC</th>
-              <th>Telefono</th>
-              <th>F. Nacimiento</th>
-              <th>Edad</th>
-            </tr>
-            </thead>
-            <tbody>
-            <tr>
-              <td>
-                <input name="leader_name" required type="text" class="form-control"
-                         placeholder="nombre del lider">
-              </td>
-              <td>
-                <input name="leader_cc" required type="number" class="form-control" placeholder="cc del lider">
-              </td>
-              <td>
-                <input name="leader_phone" required type="number" class="form-control"
-                         placeholder="telefono del lider">
-              </td>
-              <td>
-                <input name="leader_date" required type="date" class="form-control"
-                         placeholder="f. nacimiento del lider"></td>
-              <td>
-                <input name="leader_age" required type="number" class="form-control"
-                         placeholder="edad del lider"></td>
-            </tr>
-
-            <tr>
-              <td>
-                <input name="member_name[]" required type="text" class="form-control"
-                       placeholder="nombre del integrante # 2">
-              </td>
-              <td>
-                <input name="member_cc[]" required type="number" class="form-control" placeholder="cc del integrante # 2">
-              </td>
-              <td>
-                <input name="member_phone[]" required type="number" class="form-control"
-                       placeholder="telefono del integrante # 2">
-              </td>
-              <td>
-                <input name="member_date[]" required type="date" class="form-control"
-                       placeholder="f. nacimiento del integrante # 2"></td>
-              <td>
-                <input name="member_age[]" required type="number" class="form-control"
-                       placeholder="edad del integrante # 2"></td>
-            </tr>
-            <tr>
-              <td>
-                <input name="member_name[]" required type="text" class="form-control"
-                       placeholder="nombre del integrante # 3">
-              </td>
-              <td>
-                <input name="member_cc[]" required type="number" class="form-control" placeholder="cc del integrante # 3">
-              </td>
-              <td>
-                <input name="member_phone[]" required type="number" class="form-control"
-                       placeholder="telefono del integrante # 3">
-              </td>
-              <td>
-                <input name="member_date[]" required type="date" class="form-control"
-                       placeholder="f. nacimiento del integrante # 3"></td>
-              <td>
-                <input name="member_age[]" required type="number" class="form-control"
-                       placeholder="edad del integrante # 3"></td>
-            </tr>
-            <tr>
-              <td>
-                <input name="member_name[]" required type="text" class="form-control"
-                       placeholder="nombre del integrante # 4">
-              </td>
-              <td>
-                <input name="member_cc[]" required type="number" class="form-control" placeholder="cc del integrante # 2">
-              </td>
-              <td>
-                <input name="member_phone[]" required type="number" class="form-control"
-                       placeholder="telefono del integrante # 4">
-              </td>
-              <td>
-                <input name="member_date[]" required type="date" class="form-control"
-                       placeholder="f. nacimiento del integrante # 4"></td>
-              <td>
-                <input name="member_age[]" required type="number" class="form-control"
-                       placeholder="edad del integrante # 4"></td>
-            </tr>
-            <tr>
-              <td>
-                <input name="member_name[]" required type="text" class="form-control"
-                       placeholder="nombre del integrante # 4">
-              </td>
-              <td>
-                <input name="member_cc[]" required type="number" class="form-control" placeholder="cc del integrante # 2">
-              </td>
-              <td>
-                <input name="member_phone[]" required type="number" class="form-control"
-                       placeholder="telefono del integrante # 4">
-              </td>
-              <td>
-                <input name="member_date[]" required type="date" class="form-control"
-                       placeholder="f. nacimiento del integrante # 2"></td>
-              <td>
-                <input name="member_age[]" required type="number" class="form-control"
-                       placeholder="edad del integrante # 4"></td>
-            </tr>
-            </tbody>
-          </table>
+                <tr>
+                  <td>
+                    <input name="member_name[]" required type="text" class="form-control"
+                           placeholder="nombre del integrante # 2">
+                  </td>
+                  <td>
+                    <input name="member_cc[]" required type="number" class="form-control"
+                           placeholder="cc del integrante # 2">
+                  </td>
+                  <td>
+                    <input name="member_phone[]" required type="number" class="form-control"
+                           placeholder="telefono del integrante # 2">
+                  </td>
+                  <td>
+                    <input name="member_date[]" required type="date" class="form-control"
+                           placeholder="f. nacimiento del integrante # 2"></td>
+                  <td>
+                    <input name="member_age[]" required type="number" class="form-control"
+                           placeholder="edad del integrante # 2"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <input name="member_name[]" required type="text" class="form-control"
+                           placeholder="nombre del integrante # 3">
+                  </td>
+                  <td>
+                    <input name="member_cc[]" required type="number" class="form-control"
+                           placeholder="cc del integrante # 3">
+                  </td>
+                  <td>
+                    <input name="member_phone[]" required type="number" class="form-control"
+                           placeholder="telefono del integrante # 3">
+                  </td>
+                  <td>
+                    <input name="member_date[]" required type="date" class="form-control"
+                           placeholder="f. nacimiento del integrante # 3"></td>
+                  <td>
+                    <input name="member_age[]" required type="number" class="form-control"
+                           placeholder="edad del integrante # 3"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <input name="member_name[]" required type="text" class="form-control"
+                           placeholder="nombre del integrante # 4">
+                  </td>
+                  <td>
+                    <input name="member_cc[]" required type="number" class="form-control"
+                           placeholder="cc del integrante # 2">
+                  </td>
+                  <td>
+                    <input name="member_phone[]" required type="number" class="form-control"
+                           placeholder="telefono del integrante # 4">
+                  </td>
+                  <td>
+                    <input name="member_date[]" required type="date" class="form-control"
+                           placeholder="f. nacimiento del integrante # 4"></td>
+                  <td>
+                    <input name="member_age[]" required type="number" class="form-control"
+                           placeholder="edad del integrante # 4"></td>
+                </tr>
+                <tr>
+                  <td>
+                    <input name="member_name[]" required type="text" class="form-control"
+                           placeholder="nombre del integrante # 4">
+                  </td>
+                  <td>
+                    <input name="member_cc[]" required type="number" class="form-control"
+                           placeholder="cc del integrante # 2">
+                  </td>
+                  <td>
+                    <input name="member_phone[]" required type="number" class="form-control"
+                           placeholder="telefono del integrante # 4">
+                  </td>
+                  <td>
+                    <input name="member_date[]" required type="date" class="form-control"
+                           placeholder="f. nacimiento del integrante # 2"></td>
+                  <td>
+                    <input name="member_age[]" required type="number" class="form-control"
+                           placeholder="edad del integrante # 4"></td>
+                </tr>
+                </tbody>
+              </table>
+            </div>
+            <div class="row">
+              <div class="col-12 col-md-2"></div>
+              <div class="col-12 col-md-3"></div>
+              <div class="col-12 col-md-4">
+                <button style="background-color: #f42b36; color: white; margin-top: 20px" type="submit" class="btn  btn-lg">Registrarse
+                </button>
+              </div>
+            </div>
+          </form>
         </div>
-        <div class="col-12 col-md-2">1</div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-12 col-md-2"></div>
-      <div class="col-12 col-md-4"></div>
-      <div class="col-12 col-md-4">
-        <button style="background-color: #f42b36; color: white" type="submit" class="btn  btn-lg">Registrarse</button>
-      </div>
-    </div>
-  </form>
-</div>
 
 
-<footer
-  class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-xl u-footer u-grey-80 u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-footer"
-  id="sec-32b2">
-  <p class="u-align-center-xs u-text u-text-1"> La Fundación Juventud Plena, JP, es una institución sin fines
-    de
-    lucro, creada, registrada y protocolizada jurídicamente, dedicada a brindar atención gratuita a los
-    niños, niñas,
-    adolescentes y jóvenes, destacando nuestra labor humanista, contribuyendo de esta manera a rescatar y
-    consolidar
-    los valores sociales y principios morales en el hogar.</p>
-  <p class="u-small-text u-text u-text-variant u-text-2"> Fundación Juventud Plena<br>¡Ampliando el Potencial
-    Humano!
-  </p>
-</footer>
+    <footer
+      class="u-align-center u-clearfix u-container-align-center u-container-align-center-lg u-container-align-center-xl u-footer u-grey-80 u-valign-middle-md u-valign-middle-sm u-valign-middle-xl u-valign-middle-xs u-footer"
+      id="sec-32b2">
+      <p class="u-align-center-xs u-text u-text-1"> La Fundación Juventud Plena, JP, es una institución sin fines
+        de
+        lucro, creada, registrada y protocolizada jurídicamente, dedicada a brindar atención gratuita a los
+        niños, niñas,
+        adolescentes y jóvenes, destacando nuestra labor humanista, contribuyendo de esta manera a rescatar y
+        consolidar
+        los valores sociales y principios morales en el hogar.</p>
+      <p class="u-small-text u-text u-text-variant u-text-2"> Fundación Juventud Plena<br>¡Ampliando el Potencial
+        Humano!
+      </p>
+    </footer>
 </body>
 <script>
   const urlParams = new URLSearchParams(window.location.search);
-  const errorMessage = urlParams.get('error');
+  const errorMessage = urlParams.get("error");
   if (errorMessage !== "" && errorMessage !== null && errorMessage !== undefined) {
-    alert('este grupo ya existe porfavor vuelve a la pantalla anterior y escoge otro grupo')
+    alert("este grupo ya existe porfavor vuelve a la pantalla anterior y escoge otro grupo");
     window.location.href = "/team";
   }
 </script>
